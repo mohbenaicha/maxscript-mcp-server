@@ -2,10 +2,9 @@ import os, re, sqlite3, faiss, numpy as np, json
 from sentence_transformers import SentenceTransformer
 
 # Use absolute paths under the mcp/utils folder so server can find them regardless of CWD
-BASE_UTILS = os.path.dirname(__file__)
-DB_PATH = os.path.join(BASE_UTILS, "docs.db")
-INDEX_PATH = os.path.join(BASE_UTILS, "index.faiss")
-
+BASE_DIR = os.path.dirname(__file__)
+INDEX_PATH = os.path.join(BASE_DIR, "..", "db", "index.faiss")
+DB_PATH = os.path.join(BASE_DIR, "..", "db", "docs.db")
 EMBED_MODEL = "all-MiniLM-L6-v2"
 
 

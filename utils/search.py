@@ -5,11 +5,9 @@ import numpy as np
 from typing import List, Dict, Any
 from collections import defaultdict
 from sentence_transformers import SentenceTransformer
-
+from utils.db import DB_PATH, INDEX_PATH
 # Absolute paths under mcp/utils
-BASE_UTILS = os.path.dirname(__file__)
-DB_PATH = os.path.join(BASE_UTILS, "docs.db")
-INDEX_PATH = os.path.join(BASE_UTILS, "index.faiss")
+
 EMBED_MODEL = "all-MiniLM-L6-v2"
 
 model = SentenceTransformer(EMBED_MODEL)

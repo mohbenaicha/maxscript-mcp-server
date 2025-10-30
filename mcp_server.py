@@ -17,10 +17,11 @@ logger = logging.getLogger(__name__)
 mcp = FastMCP("maxscript-docs")
 
 # Database connection for tag search (use absolute path inside mcp/utils)
-DB_PATH = os.path.join(os.path.dirname(__file__), "db", "docs.db")
+from utils.db import DB_PATH
+
 conn = sqlite3.connect(DB_PATH, check_same_thread=False)
 cur = conn.cursor()
-
+print(f"Connected to database at {DB_PATH}")
 
 @mcp.tool()
 def search_docs(q: str, top_k: int = 3) -> List[Dict[str, Any]]:
