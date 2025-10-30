@@ -1,0 +1,6 @@
+# MCP Server Dependencies
+mcp>=1.2.0,<2
+sentence-transformers==5.1.2
+faiss-cpu==1.12
+fastapi==0.120.0
+uvicorn==0.38.0
