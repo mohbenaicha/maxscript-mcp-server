@@ -1,4 +1,4 @@
-This is an **MCP** server implementation for **3DS Max script**, allowing integration with your coding agent to give it specific context. 
+This is an **MCP** server implementation for **3DS MaxScript**, allowing integration with your coding agent to give it specific context. 
 
 This is especially useful since:
    - MaxScript is a relatively powerful but niche language and most coding agents have sparse knowledge about it
