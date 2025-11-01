@@ -44,7 +44,7 @@ Optional: add host and port arguments `--mcp-port`, `--mcp-host`, defaults to `1
 
 # 3. Setup VSCode MCP Server Connection
 - Add: MCP Server (on your VS Code editor, `CTRL+SHIFT+P` and select `MCP: Add Server`)
-- Set URL to: `http://localhost:9000/sse`
+- Set URL to: `http://localhost:9000/sse` (adjust for the host/port that you used)
 - Enter a name for the mcp server connection and set scope (for accessing from workspace or globally - all projects)
 - check output to make sure the following logs are present:
 ```
