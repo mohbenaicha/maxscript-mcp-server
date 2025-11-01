@@ -45,14 +45,14 @@ Optional: add host and port arguments `--mcp-port`, `--mcp-host`, defaults to `1
 # 3. Setup VSCode MCP Server Connection
 - Add: MCP Server (on your VS Code editor, `CTRL+SHIFT+P` and select `MCP: Add Server`)
 - Set URL to: `http://localhost:9000/sse` (adjust for the host/port that you used)
-- Enter a name for the mcp server connection and set scope (for accessing from workspace or globally - all projects)
+- Enter a name for the mcp server connection (ex: maxscript-mcp-server) and set scope (for accessing from workspace or globally - all projects)
 - check output to make sure the following logs are present:
 ```
 2025-10-30 15:09:07.309 [info] 405 status sending message to http://localhost:9000/sse, will attempt to fall back to legacy SSE
 2025-10-30 15:09:07.318 [info] Discovered 7 tools
 ```
-- A mcp.json is created in the .vscode folder with the server connection details, which also can be manually edited 
-- You should not be able to tag the maxscript mcp server in your agent's chat by using # and the name you provided
+- A mcp.json is created in the .vscode folder (if you used the workspace option) with the server connection details, which also can be manually edited 
+- You should not be able to tag the maxscript mcp server in your agent's chat by using # (ex: `#maxscript-mcp-server`) and the name you provided
 
 
 Future plans for this project:
