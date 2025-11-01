@@ -18,7 +18,7 @@ This is especially useful since:
 6. search_os_interaction: semantic search OS Interaction
 7. search_examples: semantic search Examples
 
-The semantic search tools require **all-MiniLM-L6-v2** which can run fast single-digit millisecond inference on a CPU when called by the agent (ex: it took me ~ 80 seconds to embed every one of 4000 documents in the database using)
+The semantic search tools require **all-MiniLM-L6-v2** which can run fast single-digit millisecond inference on a CPU when called by the agent (ex: it took me ~ 80 seconds to embed every one of 4000 documents (~ 14K chunks, in the database using all cores)
 
 # 1. Env setup
 **VENV:**
