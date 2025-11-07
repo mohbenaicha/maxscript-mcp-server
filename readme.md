@@ -7,7 +7,6 @@ This is especially useful since:
    - Agents without internet retrieval capabilities now have a localized documentation
    - The documentation is split up into topics making it easier to access specific topics through filtering or semantic search rather than generally scraping an entire page which is what coding agents with internet access do
 
-
 ### The MCP server feature 7 tools:
 
 1. list_documents: List all document IDs in the database with pagination.
@@ -24,7 +23,7 @@ The semantic search tools require **all-MiniLM-L6-v2** which can run fast single
 **VENV:**
 
 ```
-python3 -m venv max-mcp-env
+python3 -m venv max-mcp-env # this app was developed and tested on Python 3.12 in Ubuntu 24.04.1
 source max-mcp-env/bin/activate  # or .\max-mcp-env\Scripts\activate on Windows
 pip install -r requirements.txt
 ```
@@ -55,5 +54,13 @@ Optional: add host and port arguments `--mcp-port`, `--mcp-host`, defaults to `1
 - You should not be able to tag the maxscript mcp server in your agent's chat by using # (ex: `#maxscript-mcp-server`) and the name you provided
 
 
-Future plans for this project:
+### Key RAG/Agentic Concepts
+1. Dense Vectors: The app uses sentence-transformers (specifically the all-MiniLM-L6-v2 model) to generate dense, continuous vector embeddings for document chunks and search queries.
+2. Vector Database: FAISS (IndexFlatIP) is used for efficient similarity search over these dense vectors, with cosine similarity (via normalized embeddings).
+3. Keyword retrieval through its search_by_tags function, which implements term-based search on pre-extracted keywords/tags.
+4. Chunking and reranking:
+   - Initial Retrieval: FAISS returns 50 chunk-level results based on embedding similarity.
+   - Refinement/Reranking: It aggregates these into document-level results by taking the maximum similarity score per document, then sorts and selects the top_k documents by that refined score.
+
+### Future plans for this project:
 1. Add an listener to 3DS Max to provide scene context to the mcp server on request
