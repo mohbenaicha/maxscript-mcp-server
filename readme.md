@@ -5,7 +5,7 @@ This is especially useful since:
    - Max is a bit clunky and needs a LOT of scripting
    - A lot of studios still depend on Max heavily in 2025
    - Agents without internet retrieval capabilities now have a localized documentation
-   - The documentation is split up into topics making it easier to access specific topics through filtering or semantic search rather than generally scraping an entire page which is what coding agents with internet access do
+   - The documentation is split up into topics making it easier to access specific topics through filtering or semantic search rather than generally scraping an entire page
 
 ### The MCP server feature 7 tools:
 
@@ -51,16 +51,14 @@ Optional: add host and port arguments `--mcp-port`, `--mcp-host`, defaults to `1
 2025-10-30 15:09:07.318 [info] Discovered 7 tools
 ```
 - A mcp.json is created in the .vscode folder (if you used the workspace option) with the server connection details, which also can be manually edited 
-- You should not be able to tag the maxscript mcp server in your agent's chat by using # (ex: `#maxscript-mcp-server`) and the name you provided
+- You should now be able to tag the maxscript mcp server in your agent's chat by using # (ex: `#maxscript-mcp-server`) and the name you provided
 
 
 ### Key RAG/Agentic Concepts
 1. Dense Vectors: The app uses sentence-transformers (specifically the all-MiniLM-L6-v2 model) to generate dense, continuous vector embeddings for document chunks and search queries.
 2. Vector Database: FAISS (IndexFlatIP) is used for efficient similarity search over these dense vectors, with cosine similarity (via normalized embeddings).
-3. Keyword retrieval through its search_by_tags function, which implements term-based search on pre-extracted keywords/tags.
+3. Keyword retrieval through its `search_by_tags` function, which implements term-based search on pre-extracted keywords/tags.
 4. Chunking and reranking:
    - Initial Retrieval: FAISS returns 50 chunk-level results based on embedding similarity.
-   - Refinement/Reranking: It aggregates these into document-level results by taking the maximum similarity score per document, then sorts and selects the top_k documents by that refined score.
+   - Refinement/Reranking: It aggregates these into document-level results by taking the maximum similarity score per document, then sorts and selects the `top_k` documents by that refined score.
 
-### Future plans for this project:
-1. Add an listener to 3DS Max to provide scene context to the mcp server on request
