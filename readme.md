@@ -1,6 +1,7 @@
 This is an **MCP** server implementation for **3DS MaxScript**, allowing integration with your coding agent to give it specific context. 
 
 This is especially useful since:
+   - Autodesk does not allow headless access to MaxScript docs
    - MaxScript is a relatively powerful but niche language and most coding agents have sparse knowledge about it
    - Max is a bit clunky and needs a LOT of scripting
    - A lot of studios still depend on Max heavily in 2025
